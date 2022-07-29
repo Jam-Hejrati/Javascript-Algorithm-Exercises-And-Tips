@@ -1,8 +1,10 @@
+// https://leetcode.com/problems/roman-to-integer/
 "use strict";
 
 const romanToInteger = (str) => {
     let romanNums = str.split("");
-    const testObj = {
+    let intSum = 0;
+    const romanObj = {
         I: 1,
         V: 5,
         X: 10,
@@ -12,8 +14,9 @@ const romanToInteger = (str) => {
         M: 1000,
     };
     for (let i = 0; i < romanNums.length; i++) {
-        console.log(testObj[romanNums[i]]);
+        intSum += romanObj[romanNums[i]];
     }
+    return intSum;
 };
 
-romanToInteger("VI");
+console.log(romanToInteger("XII"));
